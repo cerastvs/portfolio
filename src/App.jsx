@@ -1,3 +1,5 @@
+import LandingPage from "./pages/LandingPage";
+
 export default function App() {
-  return <h1>Starting Set Up Test</h1>;
+  return <LandingPage />;
 }
