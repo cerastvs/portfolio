@@ -17,14 +17,14 @@ export default function LandingPage() {
         <div>
           <HeroTitle
             classNames="hero-title"
-            text={{ names: "LIEU RIK", size: "264.63px" }}
+            text={{ names: "LIEU RIK", size: "17.25vw" }}
           />
           <div id="second-hero-container">
             <HeroTitle
               classNames="hero-title hero-title-second"
-              text={{ names: "SOLIMAN", size: "241px" }}
+              text={{ names: "SOLIMAN", size: "15.7vw" }}
             />
-            <h2 id="hero-subtitle">ASPIRING DEVELOPER</h2>
+            <h2 id="hero-subtitle">ASPIRING WEB DEVELOPER</h2>
           </div>
         </div>
       </div>
