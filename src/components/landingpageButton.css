@@ -1,0 +1,17 @@
+.landingpage-button {
+  background-color: white;
+  color: black;
+  border: 0;
+  padding: 10px;
+  border-radius: 8px;
+  height: 46px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#selected {
+}
+
+#button-container {
+  padding-left: 3.3%;
+}

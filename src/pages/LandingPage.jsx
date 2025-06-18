@@ -1,6 +1,9 @@
 import "../landingPage.css";
 import myImage from "../media/myImage.png";
 import ValueCard from "../components/ValueCard";
+import ShiftingButton from "../components/ShiftingButton";
+import { designSet, developmentSet } from "../media/sets.js";
+import { useState } from "react";
 
 function HeroTitle({ classNames, text }) {
   return (
@@ -11,6 +14,8 @@ function HeroTitle({ classNames, text }) {
 }
 
 export default function LandingPage() {
+  const [currentSet, toggleSet] = useState(designSet);
+
   return (
     <section id="landing-page">
       <div id="hero-title-container">
@@ -29,36 +34,21 @@ export default function LandingPage() {
         </div>
       </div>
       <img id="myImage" src={myImage} alt="Lieu rik" />
-      <div id="skills-container">
-        <ValueCard
-          {...{
-            headding: "USER CENTERED DESIGN",
-            subHeadding:
-              "Designing with EmpathyPutting Users at the Heart of Every Solution.",
-          }}
-        />
-        <ValueCard
-          {...{
-            headding: "CURIOUS & FLEXIBLE",
-            subHeadding:
-              "Learning, whether it’s a new design trend, tool, or user insight",
-          }}
-        />
-        <ValueCard
-          {...{
-            headding: "TECH COMFORTABLE",
-            subHeadding:
-              "Confidently use design tools and understand the tech behind the scenes.",
-          }}
-        />
-        <ValueCard
-          {...{
-            headding: "COLLABORATIVE",
-            subHeadding:
-              "Open with Co-Creation Building Better Solutions Together",
-            last: true,
-          }}
-        />
+
+      <div id="bottom-container">
+        <ShiftingButton {...{ set1: () => {}, set2: () => {} }} />
+        <div id="skills-container">
+          {currentSet.map((item, index) => {
+            return (
+              <ValueCard
+                key={item.headding}
+                headding={item.headding}
+                subHeadding={item.subHeadding}
+                last={item.last}
+              />
+            );
+          })}
+        </div>
       </div>
     </section>
   );
