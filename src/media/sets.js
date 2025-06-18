@@ -37,5 +37,6 @@ export const developmentSet = [
   {
     headding: "ENJOYS BUILDING",
     subHeadding: "Excited to create things and see them come to life.",
+    last: true,
   },
 ];

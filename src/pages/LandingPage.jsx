@@ -13,8 +13,13 @@ function HeroTitle({ classNames, text }) {
   );
 }
 
+function changeState() {
+  this.style.backgoundColor = "white";
+  this.style.color = "black";
+}
+
 export default function LandingPage() {
-  const [currentSet, toggleSet] = useState(designSet);
+  const [currentSet, switchSet] = useState(designSet);
 
   return (
     <section id="landing-page">
@@ -36,7 +41,12 @@ export default function LandingPage() {
       <img id="myImage" src={myImage} alt="Lieu rik" />
 
       <div id="bottom-container">
-        <ShiftingButton {...{ set1: () => {}, set2: () => {} }} />
+        <ShiftingButton
+          {...{
+            set1: () => switchSet(designSet),
+            set2: () => switchSet(developmentSet),
+          }}
+        />
         <div id="skills-container">
           {currentSet.map((item, index) => {
             return (

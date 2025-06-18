@@ -1,11 +1,12 @@
 import "./landingpageButton.css";
-
-function Button({ buttonName, func }) {
+import { useState } from "react";
+function Button({ buttonName, func, isActive, onClick }) {
   return (
     <button
-      className="landingpage-button"
+      className={isActive ? "landingpage-button active" : "landingpage-button"}
       onClick={() => {
         func();
+        onClick();
       }}
     >
       {buttonName}
@@ -13,11 +14,23 @@ function Button({ buttonName, func }) {
   );
 }
 
-export default function ShiftingButton(...{ set1, set2 }) {
+export default function ShiftingButton({ set1, set2 }) {
+  const [activeButton, setActiveButton] = useState("DESIGN");
+
   return (
     <div id="button-container">
-      <Button buttonName="DESIGN" func={set1} />
-      <Button buttonName="DEVELOPMENT" func={set2} />
+      <Button
+        buttonName="DESIGN"
+        func={set1}
+        isActive={activeButton === "DESIGN"}
+        onClick={() => setActiveButton("DESIGN")}
+      />
+      <Button
+        buttonName="DEVELOPMENT"
+        func={set2}
+        isActive={activeButton === "DEVELOPMENT"}
+        onClick={() => setActiveButton("DEVELOPMENT")}
+      />
     </div>
   );
 }
