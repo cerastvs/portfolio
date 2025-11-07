@@ -1,8 +1,8 @@
-import "../landingPage.css";
-import myImage from "../media/myImage.png";
-import ValueCard from "../components/ValueCard";
-import ShiftingButton from "../components/ShiftingButton";
-import { designSet, developmentSet } from "../media/sets.js";
+import "./landingPage.css";
+import myImage from "../../media/myImage.png";
+import ValueCard from "../../components/ValueCard.jsx";
+import ShiftingButton from "../../components/ShiftingButton.jsx";
+import { designSet, developmentSet } from "../../media/sets.js";
 import { useState } from "react";
 
 function HeroTitle({ classNames, text }) {

@@ -49,7 +49,7 @@ body {
 #landing-page {
   height: 100vh;
   width: auto;
-  background-image: url("./media/mountains.jpg");
+  background-image: url("/src/media/mountains.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -98,4 +98,94 @@ body {
   justify-content: space-around;
   align-items: center;
   padding-bottom: 1%;
+}
+
+
+
+
+@media (max-width: 768px) {
+  #landing-page {
+  height: auto;
+}
+  #hero-title-container {
+    padding-top: 8vh;
+    padding-bottom: 2vh;
+  }
+
+  .hero-title-second {
+    display: none;
+  }
+
+  .hero-title {
+    font-size: clamp(14vw, 20vw, 24vw) !important;
+    letter-spacing: -5px;
+    line-height: 0.9;
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  #hero-subtitle {
+    position: relative;
+    background: none;
+    font-size: 4.5vw;
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+
+  #myImage {
+    position: relative;
+    display: block;
+    margin: -5vh auto 0 auto;
+    width: 85%;
+    height: auto;
+    max-height: 55vh;
+    object-fit: contain;
+    z-index: 2;
+  }
+
+  #bottom-container {
+    height: auto;
+    padding: 2rem 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0%), rgba(31, 31, 31, 100%));
+  }
+
+  #skills-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.8rem;
+    padding-bottom: 3%;
+  }
+
+  .skill {
+    width: 80%;
+    border: none;
+    padding: 0;
+  }
+
+  .skill-sub-heading {
+    font-size: 3.8vw;
+  }
+  
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: clamp(16vw, 22vw, 26vw) !important;
+    letter-spacing: -3px;
+  }
+
+  #hero-subtitle {
+    font-size: 5vw;
+  }
+
+  #myImage {
+    margin-top: -4vh;
+    width: 90%;
+    max-height: 50vh;
+  }
+
+  .skill-sub-heading {
+    font-size: 4vw;
+  }
 }
