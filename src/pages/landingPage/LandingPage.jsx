@@ -1,56 +1,63 @@
-import "./landingPage.css";
 import myImage from "../../media/myImage.png";
+import mountains from "../../media/mountains.jpg";
 import ValueCard from "../../components/ValueCard.jsx";
 import ShiftingButton from "../../components/ShiftingButton.jsx";
 import { designSet, developmentSet } from "../../media/sets.js";
 import { useState } from "react";
 import HeroTitle from "../../components/HeroTitle.jsx";
-
-function changeState() {
-  this.style.backgoundColor = "white";
-  this.style.color = "black";
-}
+import { AnimatePresence } from "framer-motion";
 
 export default function LandingPage() {
   const [currentSet, switchSet] = useState(designSet);
 
   return (
-    <section id="landing-page">
-      <div id="hero-title-container">
+    <section
+      className="min-h-screen md:h-screen w-auto bg-[#1a1a1a] bg-cover bg-center bg-fixed flex flex-col justify-between overflow-hidden md:overflow-visible"
+      style={{ backgroundImage: `url(${mountains})` }}
+    >
+      <div className="bg-[#2e2e2e] flex flex-col items-center pt-[8vh] pb-[2vh] md:py-0 relative z-[1]">
         <div>
           <HeroTitle
-            classNames="hero-title"
-            text={{ names: "LIEU RIK", size: "17.25vw" }}
+            classNames="m-[-22px_0_0_0] p-0 tracking-[-5px] md:tracking-[-15px] leading-[0.9] text-transparent bg-cover bg-center bg-fixed font-semibold bg-clip-text text-[14vw] md:text-[17.25vw] block text-center md:text-left"
+            style={{ backgroundImage: `url(${mountains})` }}
+            text={{ names: "LIEU RIK", size: "" }}
           />
-          <div id="second-hero-container">
+          <div className="relative">
             <HeroTitle
-              classNames="hero-title hero-title-second"
+              classNames="hidden md:block m-[-22px_0_0_0] p-0 tracking-[-15px] leading-[0.9] text-transparent bg-cover bg-center bg-fixed font-semibold bg-clip-text mt-[-38px] pt-[1.3vw]"
+              style={{ backgroundImage: `url(${mountains})` }}
               text={{ names: "SOLIMAN", size: "15.7vw" }}
             />
-            <h2 id="hero-subtitle">FULLSTACK WEB DEVELOPER</h2>
+            <h2 className="static md:absolute bottom-0 right-0 text-[5vw] sm:text-[4.5vw] md:text-[1.11vw] m-0 p-[0.54vw] md:bg-[#2e2e2e] mt-2 md:mt-0 text-center md:text-left">
+              FULLSTACK WEB DEVELOPER
+            </h2>
           </div>
         </div>
       </div>
-      <img id="myImage" src={myImage} alt="Lieu rik" />
+      <img
+        className="relative md:absolute bottom-0 left-1/2 -translate-x-1/2 w-full sm:w-[95%] h-auto max-h-[60vh] sm:max-h-[70vh] md:h-[80%] object-contain z-[10] block mx-auto md:mx-0 mt-[-6vh] sm:mt-[-8vh] md:mt-0 opacity-100"
+        src={myImage}
+        alt="Lieu rik"
+      />
 
-      <div id="bottom-container">
+      <div className="bg-gradient-to-b from-black/0 to-[#1f1f1f] h-auto md:h-[25%] z-[20] py-8 md:py-0 relative">
         <ShiftingButton
-          {...{
-            set1: () => switchSet(designSet),
-            set2: () => switchSet(developmentSet),
-          }}
+          set1={() => switchSet(designSet)}
+          set2={() => switchSet(developmentSet)}
         />
-        <div id="skills-container">
-          {currentSet.map((item, index) => {
-            return (
-              <ValueCard
-                key={item.headding}
-                headding={item.headding}
-                subHeadding={item.subHeadding}
-                last={item.last}
-              />
-            );
-          })}
+        <div className="flex flex-col md:flex-row justify-around items-center gap-[1.8rem] md:gap-0 pb-[3%] md:pb-[1%]">
+          <AnimatePresence mode="wait">
+            {currentSet.map((item, index) => {
+              return (
+                <ValueCard
+                  key={item.headding}
+                  headding={item.headding}
+                  subHeadding={item.subHeadding}
+                  last={item.last}
+                />
+              );
+            })}
+          </AnimatePresence>
         </div>
       </div>
     </section>
