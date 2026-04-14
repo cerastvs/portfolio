@@ -5,10 +5,19 @@ import ShiftingButton from "../../components/ShiftingButton.jsx";
 import { designSet, developmentSet } from "../../media/sets.js";
 import { useState } from "react";
 import HeroTitle from "../../components/HeroTitle.jsx";
-import { AnimatePresence } from "framer-motion";
+import {
+  AnimatePresence,
+  motion,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 
 export default function LandingPage() {
   const [currentSet, switchSet] = useState(designSet);
+  const { scrollY } = useScroll();
+
+  const scale = useTransform(scrollY, [0, 500], [1, 1.5]);
+  const blur = useTransform(scrollY, [0, 500], ["blur(0px)", "blur(10px)"]);
 
   return (
     <section
@@ -34,10 +43,11 @@ export default function LandingPage() {
           </div>
         </div>
       </div>
-      <img
+      <motion.img
         className="relative md:absolute bottom-0 left-1/2 -translate-x-1/2 w-full sm:w-[95%] h-auto max-h-[60vh] sm:max-h-[70vh] md:h-[80%] object-contain z-[10] block mx-auto md:mx-0 mt-[-6vh] sm:mt-[-8vh] md:mt-0 opacity-100"
         src={myImage}
         alt="Lieu rik"
+        style={{ scale, filter: blur }}
       />
 
       <div className="bg-gradient-to-b from-black/0 to-[#1f1f1f] h-auto md:h-[25%] z-[20] py-8 md:py-0 relative">
