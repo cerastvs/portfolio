@@ -135,6 +135,7 @@ body {
   #myImage {
     position: relative;
     display: block;
+    opacity: 0;
     margin: -5vh auto 0 auto;
     width: 85%;
     height: auto;

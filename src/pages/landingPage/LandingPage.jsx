@@ -4,14 +4,7 @@ import ValueCard from "../../components/ValueCard.jsx";
 import ShiftingButton from "../../components/ShiftingButton.jsx";
 import { designSet, developmentSet } from "../../media/sets.js";
 import { useState } from "react";
-
-function HeroTitle({ classNames, text }) {
-  return (
-    <h1 className={classNames} style={{ fontSize: text.size }}>
-      {text.names}
-    </h1>
-  );
-}
+import HeroTitle from "../../components/HeroTitle.jsx";
 
 function changeState() {
   this.style.backgoundColor = "white";
@@ -34,7 +27,7 @@ export default function LandingPage() {
               classNames="hero-title hero-title-second"
               text={{ names: "SOLIMAN", size: "15.7vw" }}
             />
-            <h2 id="hero-subtitle">ASPIRING WEB DEVELOPER</h2>
+            <h2 id="hero-subtitle">FULLSTACK WEB DEVELOPER</h2>
           </div>
         </div>
       </div>
