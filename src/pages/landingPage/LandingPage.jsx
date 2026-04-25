@@ -21,7 +21,7 @@ export default function LandingPage() {
 
   return (
     <section
-      className="min-h-screen md:h-screen w-auto bg-[#1a1a1a] bg-cover bg-center bg-fixed flex flex-col justify-between overflow-hidden md:overflow-visible"
+      className="min-h-screen md:h-screen w-auto bg-[#1a1a1a] bg-cover bg-center bg-fixed flex flex-col justify-between overflow-hidden relative"
       style={{ backgroundImage: `url(${mountains})` }}
     >
       <div className="bg-[#2e2e2e] flex flex-col items-center pt-[8vh] pb-[2vh] md:py-0 relative z-[1]">
@@ -31,9 +31,9 @@ export default function LandingPage() {
             style={{ backgroundImage: `url(${mountains})` }}
             text={{ names: "LIEU RIK", size: "" }}
           />
-          <div className="relative">
+          <div className="relative flex flex-col justify-end">
             <HeroTitle
-              classNames="hidden md:block m-[-22px_0_0_0] p-0 tracking-[-15px] leading-[0.9] text-transparent bg-cover bg-center bg-fixed font-semibold bg-clip-text mt-[-38px] pt-[1.3vw]"
+              classNames="hidden md:block m-0 p-0 tracking-[-15px] leading-[0.8] text-transparent bg-cover bg-center bg-fixed font-semibold bg-clip-text"
               style={{ backgroundImage: `url(${mountains})` }}
               text={{ names: "SOLIMAN", size: "15.7vw" }}
             />
@@ -47,7 +47,7 @@ export default function LandingPage() {
         className="relative md:absolute bottom-0 left-1/2 -translate-x-1/2 w-full sm:w-[95%] h-auto max-h-[60vh] sm:max-h-[70vh] md:h-[80%] object-contain z-[10] block mx-auto md:mx-0 mt-[-6vh] sm:mt-[-8vh] md:mt-0 opacity-100"
         src={myImage}
         alt="Lieu rik"
-        style={{ scale, filter: blur }}
+        style={{ scale, filter: blur, transformOrigin: "bottom" }}
       />
 
       <div className="bg-gradient-to-b from-black/0 to-[#1f1f1f] h-auto md:h-[25%] z-[20] py-8 md:py-0 relative">
