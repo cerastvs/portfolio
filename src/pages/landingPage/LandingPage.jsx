@@ -5,6 +5,7 @@ import ShiftingButton from "../../components/ShiftingButton.jsx";
 import { designSet, developmentSet } from "../../media/sets.js";
 import { useState } from "react";
 import HeroTitle from "../../components/HeroTitle.jsx";
+import RavenSpawner from "../../components/RavenSpawner.jsx";
 import {
   AnimatePresence,
   motion,
@@ -26,6 +27,7 @@ export default function LandingPage() {
       className="min-h-screen md:h-screen w-auto bg-[#1a1a1a] bg-cover bg-center bg-fixed flex flex-col justify-between overflow-hidden relative"
       style={{ backgroundImage: `url(${mountains})` }}
     >
+      <RavenSpawner />
       <div className="bg-[#2e2e2e] flex flex-col items-center pt-[8vh] pb-[2vh] md:py-0 relative z-[1]">
         <div>
           <HeroTitle
