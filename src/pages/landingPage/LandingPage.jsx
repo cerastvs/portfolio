@@ -48,7 +48,7 @@ export default function LandingPage() {
         </div>
       </div>
       <motion.img
-        className="relative md:absolute bottom-0 left-1/2 -translate-x-1/2 w-full sm:w-[95%] h-auto max-h-[60vh] sm:max-h-[70vh] md:h-[80%] object-contain z-[10] block mx-auto md:mx-0 mt-[-6vh] sm:mt-[-8vh] md:mt-0 opacity-100"
+        className="relative md:absolute bottom-0 left-1/2 -translate-x-1/2 w-full sm:w-[95%] h-auto max-h-[60vh] sm:max-h-[70vh] md:h-[80%] object-contain z-[10] invisible md:visible mx-auto md:mx-0 mt-[-6vh] sm:mt-[-8vh] md:mt-0 opacity-100"
         src={myImage}
         alt="Lieu rik"
         style={{ scale, filter: blur, transformOrigin: "bottom" }}
@@ -63,7 +63,7 @@ export default function LandingPage() {
         </div>
         <div className="flex flex-col md:flex-row justify-around items-center gap-[1.8rem] md:gap-0 pb-[3%] md:pb-[1%]">
           <AnimatePresence mode="wait">
-            {currentSet.map((item, index) => {
+            {currentSet.map((item) => {
               return (
                 <ValueCard
                   key={item.headding}

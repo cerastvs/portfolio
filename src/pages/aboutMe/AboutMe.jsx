@@ -41,7 +41,7 @@ export default function AboutMe() {
   const currentIcons = tabData[activeTab] || [];
 
   return (
-    <section className="bg-[#E2E2E2] text-black">
+    <section className="bg-[#E2E2E2] text-black overflow-x-hidden">
       <div className="h-[30vh] bg-gradient-to-b from-[#1f1f1f] to-[#141414]" />
 
       <div className="flex justify-start bg-[#141414] overflow-hidden">
@@ -91,6 +91,7 @@ export default function AboutMe() {
                   object-contain
               pointer-events-none
               select-none
+              hidden md:block
             "
           />
 
@@ -104,14 +105,14 @@ export default function AboutMe() {
                 TECHNOLOGIES AND TOOLS I WORK WITH
               </h3>
 
-              <div className="flex space-x-3 md:space-x-6 text-[13px] md:text-[14px] font-bold">
+              <div className="flex flex-wrap gap-y-2 gap-x-3 md:gap-x-6 text-[12px] md:text-[14px] font-bold">
                 {["FRONTEND", "BACKEND", "DATABASES", "OTHERS"].map((tab) => (
                   <span
                     key={tab}
                     onClick={() => setActiveTab(tab)}
-                    className={`px-4 py-2 cursor-pointer ${
+                    className={`px-3 md:px-4 py-2 cursor-pointer ${
                       activeTab === tab
-                        ? "bg-[#141414] text-white rounded-t-md"
+                        ? "bg-[#141414] text-white rounded-md md:rounded-t-md"
                         : "text-[#141414]/60 hover:text-black"
                     }`}
                   >

@@ -10,6 +10,50 @@ import { FaGithub, FaJava } from "react-icons/fa";
 import upsidedownMountain from "../../assets/upsidedownMountain.png";
 import projectsTree from "../../assets/projectsTree.png";
 
+const projectsData = [
+  {
+    title: "TUSKY TASKY",
+    description:
+      "A collaborative task management app where users can view others' daily routines, adopt tasks into their own schedule, and assign tasks to each other for better productivity",
+    github: "https://github.com/cerastvs/tusky-tasky-app",
+    tech: [
+      { icon: <SiNextdotjs size={16} />, title: "Next.js" },
+      { icon: <SiTailwindcss size={16} />, title: "Tailwind CSS" },
+      { icon: <SiPrisma size={16} />, title: "Prisma" },
+      { icon: <SiTypescript size={16} />, title: "TypeScript" },
+    ],
+
+    position: "top-[10%] left-[5%] w-[320px]",
+    delay: 0.1,
+  },
+  {
+    title: "FARMERS COOP (RIZAL)",
+    description:
+      "A farmers' cooperative management system that streamlines daily operations by organizing tasks, sharing routines among members, and enabling task assignment to improve coordination, productivity, and accountability within the cooperative.",
+    github: "https://github.com/cerastvs/farmers-coop",
+    tech: [
+      { icon: <SiNextdotjs size={16} />, title: "Next.js" },
+      { icon: <SiTailwindcss size={16} />, title: "Tailwind CSS" },
+      { icon: <SiPrisma size={16} />, title: "Prisma" },
+      { icon: <SiTypescript size={16} />, title: "TypeScript" },
+    ],
+    position: "top-[40%] right-[3%] w-[350px]",
+    delay: 0.3,
+  },
+  {
+    title: "SK PAYROLL SYSTEM",
+    description:
+      "A Sangguniang Kabataan payroll system that automates allowance computation, tracks attendance and records, and streamlines the distribution of payments for accurate, efficient, and transparent financial management.",
+    github: "https://github.com/cerastvs/sangguniang-kabataan-payroll-system",
+    tech: [
+      { icon: <FaJava size={16} />, title: "Java" },
+      { icon: <SiSpringboot size={16} />, title: "Spring Boot" },
+    ],
+    position: "bottom-[10%] left-[8%] w-[340px]",
+    delay: 0.5,
+  },
+];
+
 export default function Projects() {
   return (
     <section className="bg-[#e6e6e6] text-black relative w-full overflow-hidden flex flex-col justify-start min-h-screen">
@@ -23,7 +67,7 @@ export default function Projects() {
           />
         </div>
 
-        <div className="absolute top-[5%] md:top-[10%] w-full flex justify-center z-10 pointer-events-none">
+        <div className="absolute top-[20%] md:top-[22%] w-full flex justify-center z-10 pointer-events-none">
           <motion.h1
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -36,7 +80,7 @@ export default function Projects() {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
-            className="text-white/90 font-bold text-[16vw] md:text-[150px] lg:text-[200px] tracking-[-0.05em] leading-none absolute inset-0 text-center"
+            className="text-[#e2e2e2] font-bold text-[16vw] md:text-[150px] lg:text-[200px] tracking-[-0.05em] leading-none absolute inset-0 text-center"
           >
             PROJECTS
           </motion.h1>
@@ -69,181 +113,76 @@ export default function Projects() {
           />
         </div>
 
+        {/* Desktop View */}
         <div className="relative z-10 w-full max-w-5xl h-[800px] hidden md:block">
-          <motion.div
-            initial={{ x: -50, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="absolute top-[10%] left-[5%] bg-[#222] text-white p-6 rounded-lg w-[320px] shadow-2xl border border-white/10 backdrop-blur-sm bg-opacity-95"
-          >
-            <div className="flex justify-between items-start mb-3">
-              <h3 className="font-bold text-lg">TUSKY TASKY</h3>
-              <a
-                href="#"
-                className="text-white hover:text-gray-300 transition-colors"
-              >
-                <FaGithub size={20} />
-              </a>
-            </div>
-            <p className="text-[13px] text-gray-300 leading-snug mb-4">
-              A collaborative task management app where users can view others'
-              daily routines, adopt tasks into their own schedule, and assign
-              tasks to each other for better productivity
-            </p>
-            <div className="flex space-x-3 text-gray-400">
-              <SiNextdotjs size={16} title="Next.js" />
-              <SiTailwindcss size={16} title="Tailwind CSS" />
-              <SiPrisma size={16} title="Prisma" />
-              <SiTypescript size={16} title="TypeScript" />
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ x: 50, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="absolute top-[40%] right-[3%] bg-[#222] text-white p-6 rounded-lg w-[350px] shadow-2xl border border-white/10 backdrop-blur-sm bg-opacity-95"
-          >
-            <div className="flex justify-between items-start mb-3">
-              <h3 className="font-bold text-lg">FARMERS COOP (RIZAL)</h3>
-              <a
-                href="#"
-                className="text-white hover:text-gray-300 transition-colors"
-              >
-                <FaGithub size={20} />
-              </a>
-            </div>
-            <p className="text-[13px] text-gray-300 leading-snug mb-4">
-              A farmers' cooperative management system that streamlines daily
-              operations by organizing tasks, sharing routines among members,
-              and enabling task assignment to improve coordination,
-              productivity, and accountability within the cooperative.
-            </p>
-            <div className="flex space-x-3 text-gray-400">
-              <SiNextdotjs size={16} title="Next.js" />
-              <SiTailwindcss size={16} title="Tailwind CSS" />
-              <SiPrisma size={16} title="Prisma" />
-              <SiTypescript size={16} title="TypeScript" />
-            </div>
-          </motion.div>
-          <motion.div
-            initial={{ x: -50, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="absolute bottom-[10%] left-[8%] bg-[#222] text-white p-6 rounded-lg w-[340px] shadow-2xl border border-white/10 backdrop-blur-sm bg-opacity-95"
-          >
-            <div className="flex justify-between items-start mb-3">
-              <h3 className="font-bold text-lg">SK PAYROLL SYSTEM</h3>
-              <a
-                href="#"
-                className="text-white hover:text-gray-300 transition-colors"
-              >
-                <FaGithub size={20} />
-              </a>
-            </div>
-            <p className="text-[13px] text-gray-300 leading-snug mb-4">
-              A Sangguniang Kabataan payroll system that automates allowance
-              computation, tracks attendance and records, and streamlines the
-              distribution of payments for accurate, efficient, and transparent
-              financial management.
-            </p>
-            <div className="flex space-x-3 text-gray-400">
-              <FaJava size={16} title="Java" />
-              <SiSpringboot size={16} title="Spring Boot" />
-            </div>
-          </motion.div>
+          {projectsData.map((project, index) => (
+            <motion.div
+              key={index}
+              initial={{ x: index % 2 === 0 ? -50 : 50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: project.delay }}
+              className={`absolute ${project.position} bg-[#222] text-white p-6 rounded-lg shadow-2xl border border-white/10 backdrop-blur-sm bg-opacity-95`}
+            >
+              <div className="flex justify-between items-start mb-3">
+                <h3 className="font-bold text-lg">{project.title}</h3>
+                <a
+                  href={project.github}
+                  className="text-white hover:text-gray-300 transition-colors"
+                >
+                  <FaGithub size={20} />
+                </a>
+              </div>
+              <p className="text-[13px] text-gray-300 leading-snug mb-4">
+                {project.description}
+              </p>
+              <div className="flex space-x-3 text-gray-400">
+                {project.tech.map((t, i) => (
+                  <span key={i} title={t.title}>
+                    {t.icon}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          ))}
 
           <div className="absolute bottom-[5%] right-[5%] max-w-[250px]">
             <p className="text-[13px] text-[#333] font-medium leading-tight">
               My other works and projects are available on my{" "}
-              <a
-                href="https://github.com/cerastvs"
-                target="_blank"
-                className="text-[#3b82f6] hover:underline font-bold"
-              >
+              <a href="#" className="text-[#3b82f6] hover:underline font-bold">
                 GitHub.
               </a>
             </p>
           </div>
         </div>
 
+        {/* Mobile View */}
         <div className="md:hidden relative z-10 w-full px-6 flex flex-col space-y-8 mt-32">
-          <motion.div
-            initial={{ y: 30, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6 }}
-            className="bg-[#222] text-white p-6 rounded-lg shadow-xl border border-white/10"
-          >
-            <div className="flex justify-between items-start mb-3">
-              <h3 className="font-bold text-lg uppercase">TUSKY TASKY</h3>
-              <a href="#" className="text-white">
-                <FaGithub size={20} />
-              </a>
-            </div>
-            <p className="text-[13px] text-gray-300 leading-snug mb-4">
-              A collaborative task management app where users can view others'
-              daily routines, adopt tasks into their own schedule, and assign
-              tasks to each other for better productivity
-            </p>
-            <div className="flex space-x-3 text-gray-400">
-              <SiNextdotjs size={16} title="Next.js" />
-              <SiTailwindcss size={16} title="Tailwind CSS" />
-              <SiPrisma size={16} title="Prisma" />
-              <SiTypescript size={16} title="TypeScript" />
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ y: 30, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-[#222] text-white p-6 rounded-lg shadow-xl border border-white/10"
-          >
-            <div className="flex justify-between items-start mb-3">
-              <h3 className="font-bold text-lg uppercase">
-                FARMERS COOP (RIZAL)
-              </h3>
-              <a href="#" className="text-white">
-                <FaGithub size={20} />
-              </a>
-            </div>
-            <p className="text-[13px] text-gray-300 leading-snug mb-4">
-              A farmers' cooperative management system that streamlines daily
-              operations by organizing tasks, sharing routines among members,
-              and enabling task assignment to improve coordination,
-              productivity, and accountability within the cooperative.
-            </p>
-            <div className="flex space-x-3 text-gray-400">
-              <SiNextdotjs size={16} title="Next.js" />
-              <SiTailwindcss size={16} title="Tailwind CSS" />
-              <SiPrisma size={16} title="Prisma" />
-              <SiTypescript size={16} title="TypeScript" />
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ y: 30, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="bg-[#222] text-white p-6 rounded-lg shadow-xl border border-white/10"
-          >
-            <div className="flex justify-between items-start mb-3">
-              <h3 className="font-bold text-lg uppercase">SK PAYROLL SYSTEM</h3>
-              <a href="#" className="text-white">
-                <FaGithub size={20} />
-              </a>
-            </div>
-            <p className="text-[13px] text-gray-300 leading-snug mb-4">
-              A Sangguniang Kabataan payroll system that automates allowance
-              computation, tracks attendance and records, and streamlines the
-              distribution of payments for accurate, efficient, and transparent
-              financial management.
-            </p>
-            <div className="flex space-x-3 text-gray-400">
-              <FaJava size={16} title="Java" />
-              <SiSpringboot size={16} title="Spring Boot" />
-            </div>
-          </motion.div>
+          {projectsData.map((project, index) => (
+            <motion.div
+              key={index}
+              initial={{ y: 30, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="bg-[#222] text-white p-6 rounded-lg shadow-xl border border-white/10"
+            >
+              <div className="flex justify-between items-start mb-3">
+                <h3 className="font-bold text-lg uppercase">{project.title}</h3>
+                <a href={project.github} target="_blank" className="text-white">
+                  <FaGithub size={20} />
+                </a>
+              </div>
+              <p className="text-[13px] text-gray-300 leading-snug mb-4">
+                {project.description}
+              </p>
+              <div className="flex space-x-3 text-gray-400">
+                {project.tech.map((t, i) => (
+                  <span key={i} title={t.title}>
+                    {t.icon}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          ))}
 
           <div className="pb-10">
             <p className="text-[13px] text-[#333] font-medium leading-tight text-center">
