@@ -173,47 +173,73 @@ export default function FirelightShowcase() {
         </motion.div>
       </section>
 
-      <section className="py-32 px-6 bg-[#0f0f0f]/50">
-        <div className="max-w-6xl mx-auto flex flex-col items-center gap-16">
-          <motion.div {...fadeInUp} className="text-center space-y-4">
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight uppercase">
-              GETTING TICKETS
-            </h2>
-            <p className="text-gray-400 text-sm md:text-lg">
-              Detailed ticket information to review before completing your
-              purchase.
-            </p>
+      <section className="relative bg-[#121212] overflow-hidden py-40">
+        {/* background glow */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.04),transparent_70%)]" />
+
+        <div className="max-w-[1400px] mx-auto relative z-10 space-y-52">
+          <motion.div
+            {...fadeInUp}
+            className="relative flex justify-end pr-10 md:pr-24"
+          >
+            <div className="absolute left-6 md:left-16 top-10">
+              <p className="text-[#9c9c9c] text-[15px] md:text-[18px] leading-[1.3] font-light max-w-[280px]">
+                Detailed ticket information to review before completing your
+                purchase.
+              </p>
+
+              <div className="absolute left-[170px] top-[78px] w-[170px] h-[1px] bg-[#cfcfcf] rotate-[32deg]" />
+            </div>
+
+            <img
+              src={gettingTickets1}
+              alt=""
+              className="
+          w-[320px]
+          md:w-[470px]
+          rotate-[-8deg]
+          object-contain
+          drop-shadow-[0_40px_80px_rgba(0,0,0,0.85)]
+        "
+            />
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-            <motion.div {...fadeInUp} className="relative group">
-              <img
-                src={gettingTickets1}
-                alt="Ticket Flow 1"
-                className="w-full max-w-sm mx-auto rounded-2xl shadow-2xl"
-              />
-              <div className="mt-8 md:absolute md:-right-20 md:top-1/4 md:max-w-[200px] text-center md:text-left">
-                <p className="text-[10px] md:text-xs text-gray-400 leading-relaxed">
-                  Interactive seat map for selecting available spots, with
-                  real-time pricing and location information.
-                </p>
-              </div>
-            </motion.div>
+          <motion.div
+            {...fadeInUp}
+            className="relative flex justify-start pl-6 md:pl-20"
+          >
+            <img
+              src={gettingTickets2}
+              alt=""
+              className="
+          w-[320px]
+          md:w-[470px]
+          rotate-[18deg]
+          object-contain
+          drop-shadow-[0_40px_80px_rgba(0,0,0,0.85)]
+        "
+            />
 
-            <motion.div {...fadeInUp} className="relative group md:mt-20">
-              <img
-                src={gettingTickets2}
-                alt="Ticket Flow 2"
-                className="w-full max-w-sm mx-auto rounded-2xl shadow-2xl"
-              />
-              <div className="mt-8 md:absolute md:-left-20 md:bottom-1/4 md:max-w-[200px] text-center md:text-right">
-                <p className="text-[10px] md:text-xs text-gray-400 leading-relaxed">
+            <div className="absolute right-2 md:right-10 top-20 md:top-32 space-y-32">
+              <div className="relative">
+                <p className="text-[#9c9c9c] text-[15px] md:text-[18px] leading-[1.3] font-light max-w-[320px]">
+                  Interactive seat map for selecting available spots, with
+                  detailed pricing and section information.
+                </p>
+
+                <div className="absolute -left-[110px] top-[58px] w-[120px] h-[1px] bg-[#cfcfcf] rotate-[-22deg]" />
+              </div>
+
+              <div className="relative">
+                <p className="text-[#9c9c9c] text-[15px] md:text-[18px] leading-[1.3] font-light max-w-[320px]">
                   Easily purchase tickets as a group by inviting friends to join
                   the selection and checkout process.
                 </p>
+
+                <div className="absolute -left-[130px] top-[38px] w-[150px] h-[1px] bg-[#cfcfcf] rotate-[-28deg]" />
               </div>
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
