@@ -9,6 +9,8 @@ import {
 import { FaGithub, FaJava } from "react-icons/fa";
 import upsidedownMountain from "../../assets/upsidedownMountain.png";
 import projectsTree from "../../assets/projectsTree.png";
+import firelight from "../../assets/firelight.png";
+import slaycast from "../../assets/slaycast.png";
 
 const projectsData = [
   {
@@ -51,6 +53,21 @@ const projectsData = [
     ],
     position: "bottom-[10%] left-[8%] w-[340px]",
     delay: 0.5,
+  },
+];
+
+const uiuxProjectsData = [
+  {
+    title: "FIRE LIGHT",
+    description:
+      "Discover nearby concerts and events, buy tickets in seconds, and connect with fellow fans to find the perfect concert buddy. all in one easy-to-use app.",
+    image: firelight,
+  },
+  {
+    title: "SLAYCAST",
+    description:
+      "Check the weather, get personalized outfit suggestions, and share your style with a community that dresses for the forecast.",
+    image: slaycast,
   },
 ];
 
@@ -192,6 +209,53 @@ export default function Projects() {
               </a>
             </p>
           </div>
+        </div>
+      </div>
+
+      <div className="relative z-10 w-full px-6 md:px-[10%] pt-40 md:pt-60 pb-40">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="mb-16"
+        >
+          <h2 className="text-[32px] md:text-[48px] font-light tracking-[0.1em] text-[#333] uppercase leading-tight">
+            UI/UX PROJECTS
+          </h2>
+          <p className="text-[14px] md:text-[16px] text-[#555] max-w-xl leading-relaxed mt-4 font-medium">
+            A look into my work projects I've completed both individually and
+            with a team, showing how I learn, create, and execute my ideas.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-7xl mx-auto">
+          {uiuxProjectsData.map((project, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              className="flex flex-col md:flex-row overflow-hidden shadow-2xl h-[400px] md:h-[260px] group"
+            >
+              <div className="w-full md:w-[45%] bg-[#0a0a0a] p-8 flex flex-col justify-center z-10">
+                <h3 className="text-white text-2xl md:text-3xl font-bold mb-4 tracking-tighter uppercase leading-none">
+                  {project.title}
+                </h3>
+                <p className="text-gray-300 text-[11px] md:text-[12px] leading-relaxed font-light">
+                  {project.description}
+                </p>
+              </div>
+              <div className="w-full md:w-[55%] relative overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                />
+                <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#0a0a0a] to-transparent hidden md:block"></div>
+                <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#0a0a0a] to-transparent md:hidden"></div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
 
