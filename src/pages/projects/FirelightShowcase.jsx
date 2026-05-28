@@ -38,11 +38,8 @@ export default function FirelightShowcase() {
           <img
             src={firelightLogo}
             alt="Firelight Logo"
-            className="h-12 md:h-16 hidden"
+            className="h-12 md:h-[72px] object-contain"
           />
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tighter bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text text-transparent uppercase">
-            FIRELIGHT
-          </h1>
           <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-xl">
             A case study design project in Figma for a mobile app that helps
             users find events they like and connect with concert buddies,
@@ -174,30 +171,19 @@ export default function FirelightShowcase() {
       </section>
 
       <section className="relative bg-[#121212] overflow-hidden py-40">
-        {/* background glow */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.04),transparent_70%)]" />
 
         <div className="max-w-[1400px] mx-auto relative z-10 space-y-52">
           <motion.div
             {...fadeInUp}
-            className="relative flex justify-end pr-10 md:pr-24"
+            className="relative flex justify-center px-6 md:px-20"
           >
-            <div className="absolute left-6 md:left-16 top-10">
-              <p className="text-[#9c9c9c] text-[15px] md:text-[18px] leading-[1.3] font-light max-w-[280px]">
-                Detailed ticket information to review before completing your
-                purchase.
-              </p>
-
-              <div className="absolute left-[170px] top-[78px] w-[170px] h-[1px] bg-[#cfcfcf] rotate-[32deg]" />
-            </div>
-
             <img
               src={gettingTickets1}
               alt=""
               className="
-          w-[320px]
-          md:w-[470px]
-          rotate-[-8deg]
+          w-full
+          max-w-6xl
           object-contain
           drop-shadow-[0_40px_80px_rgba(0,0,0,0.85)]
         "
@@ -206,39 +192,18 @@ export default function FirelightShowcase() {
 
           <motion.div
             {...fadeInUp}
-            className="relative flex justify-start pl-6 md:pl-20"
+            className="relative flex justify-center px-6 md:px-20"
           >
             <img
               src={gettingTickets2}
               alt=""
               className="
-          w-[320px]
-          md:w-[470px]
-          rotate-[18deg]
+          w-full
+          max-w-6xl
           object-contain
           drop-shadow-[0_40px_80px_rgba(0,0,0,0.85)]
         "
             />
-
-            <div className="absolute right-2 md:right-10 top-20 md:top-32 space-y-32">
-              <div className="relative">
-                <p className="text-[#9c9c9c] text-[15px] md:text-[18px] leading-[1.3] font-light max-w-[320px]">
-                  Interactive seat map for selecting available spots, with
-                  detailed pricing and section information.
-                </p>
-
-                <div className="absolute -left-[110px] top-[58px] w-[120px] h-[1px] bg-[#cfcfcf] rotate-[-22deg]" />
-              </div>
-
-              <div className="relative">
-                <p className="text-[#9c9c9c] text-[15px] md:text-[18px] leading-[1.3] font-light max-w-[320px]">
-                  Easily purchase tickets as a group by inviting friends to join
-                  the selection and checkout process.
-                </p>
-
-                <div className="absolute -left-[130px] top-[38px] w-[150px] h-[1px] bg-[#cfcfcf] rotate-[-28deg]" />
-              </div>
-            </div>
           </motion.div>
         </div>
       </section>
@@ -251,26 +216,16 @@ export default function FirelightShowcase() {
           <p className="text-gray-400">See you at the event!</p>
         </motion.div>
 
-        <div className="flex flex-col md:flex-row items-center gap-16 max-w-6xl w-full">
-          <motion.div
-            {...fadeInUp}
-            className="w-full md:w-1/2 flex justify-center md:justify-end"
-          >
+        <div className="flex flex-col items-center gap-16 max-w-6xl w-full">
+          <motion.div {...fadeInUp} className="w-full flex justify-center">
             <img
               src={enjoyAndWait}
               alt="Final Ticket"
-              className="w-[280px] md:w-[320px] rounded-3xl shadow-2xl"
+              className="w-full max-w-4xl rounded-3xl"
             />
           </motion.div>
-          <motion.div
-            {...fadeInUp}
-            className="w-full md:w-1/2 space-y-8 text-center md:text-left"
-          >
-            <p className="text-gray-400 text-sm md:text-base max-w-xs mx-auto md:mx-0">
-              Comprehensive overview of all purchased tickets with event
-              schedule, seating details, and purchase confirmations.
-            </p>
-            <div className="pt-10">
+          <motion.div {...fadeInUp} className="w-full space-y-8 text-center">
+            <div className="pt-4">
               <button className="bg-[#b333e6] hover:bg-[#a02bd1] text-white px-10 py-3 rounded-full font-bold uppercase tracking-widest transition-all transform hover:scale-105 shadow-lg shadow-purple-500/20 text-sm">
                 TRY FIRELIGHT NOW
               </button>
