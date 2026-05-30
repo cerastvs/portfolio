@@ -17,8 +17,11 @@ export default function FirelightShowcase() {
     viewport: { once: true },
   };
 
+  const foreLightSrc =
+    "https://www.figma.com/proto/Xu8cOL1hj8nOX6c5w1MDSc/2B-Soliman-Lieu-Rik-M.---FIRELIGHT?node-id=416-406&p=f&t=nZ70vHR2WILtlCO3-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=3%3A38&show-proto-sidebar=1";
+
   return (
-    <div className="bg-[#141414] text-white font-sans selection:bg-pink-500 selection:text-white">
+    <div className="bg-[#1B1B1B] text-white font-sans selection:bg-pink-500 selection:text-white">
       <section className="min-h-screen flex flex-col md:flex-row items-center justify-center px-6 md:px-20 py-20 gap-10">
         <motion.div
           {...fadeInUp}
@@ -170,7 +173,7 @@ export default function FirelightShowcase() {
         </motion.div>
       </section>
 
-      <section className="relative bg-[#121212] overflow-hidden py-40">
+      <section className="relative bg-[#1B1B1B] overflow-hidden py-40">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.04),transparent_70%)]" />
 
         <div className="max-w-[1400px] mx-auto relative z-10 space-y-52">
@@ -225,16 +228,19 @@ export default function FirelightShowcase() {
             />
           </motion.div>
           <motion.div {...fadeInUp} className="w-full space-y-8 text-center">
-            <div className="pt-4">
-              <button className="bg-[#b333e6] hover:bg-[#a02bd1] text-white px-10 py-3 rounded-full font-bold uppercase tracking-widest transition-all transform hover:scale-105 shadow-lg shadow-purple-500/20 text-sm">
-                TRY FIRELIGHT NOW
-              </button>
-            </div>
+            <a
+              href={foreLightSrc}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-[#b333e6] hover:bg-[#a02bd1] text-white px-10 py-3 rounded-full font-bold uppercase tracking-widest transition-all transform hover:scale-105 shadow-lg shadow-purple-500/20 text-sm"
+            >
+              TRY FIRELIGHT NOW
+            </a>
           </motion.div>
         </div>
       </section>
 
-      <div className="h-20 bg-gradient-to-b from-[#141414] to-black"></div>
+      <div className="h-20"></div>
     </div>
   );
 }

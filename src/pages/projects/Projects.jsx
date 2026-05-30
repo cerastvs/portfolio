@@ -261,7 +261,7 @@ export default function Projects() {
 
       <div className="relative w-full h-[200px] z-20">
         <div
-          className="absolute inset-0 bg-[#141414] w-full"
+          className="absolute inset-0 bg-[#1B1B1B] w-full"
           style={{ clipPath: "polygon(0 100%, 100% 100%, 100% 30%, 30% 30%)" }}
         ></div>
       </div>
